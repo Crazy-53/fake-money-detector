@@ -1,7 +1,0 @@
-how to run the code
-first step: 
-download the virsual interpreter from the next link:
-https://drive.google.com/drive/folders/15mI_NZRVknpuhiGyGsMsc_hwQfodwcxq?usp=sharing
-from the search bar at VSC search for ">Python:Select interpreter" 
-select "enter interpreter path.."
-add the (project file)/.venv/Scripts/python.exe as the interpreter file
