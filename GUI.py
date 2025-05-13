@@ -13,11 +13,11 @@ from logic import CurrencyDetector
 MAIN_BG = '#1b263b'  # Dark blue background
 PRIMARY_COLOR = '#2B3A67'  # Navy blue
 SECONDARY_COLOR = '#E84545'  # Vibrant red
-ACCENT_COLOR = '#53354A'  # Deep purple
-TEXT_COLOR = '#FFFFFF'  # White text
-BUTTON_BG = '#E84545'  # Red buttons
-HOVER_COLOR = '#FF6B6B'  # Lighter red for hover
-FRAME_BG = '#2B3A67'  # Navy blue for frames
+ACCENT_COLOR = '#53354A'  # Deep purple  
+TEXT_COLOR = '#FFFFFF'  # White text   
+BUTTON_BG = '#E84545'  # Red buttons      
+HOVER_COLOR = '#FF6B6B'  # Lighter red for hover  
+FRAME_BG = '#2B3A67'  # Navy blue for frames     
 
 # Paths to images
 LOGO_PATH = r"gui\detective.png"
@@ -63,18 +63,18 @@ class ModernButton(tk.Button):
             compound="center"
         )
         
-        # Create canvas for rounded button
-        self.canvas = tk.Canvas(
+        # Create canvas for rounded button    
+        self.canvas = tk.Canvas(            
             master,
-            width=self.winfo_reqwidth(),
-            height=self.winfo_reqheight(),
+            width=self.winfo_reqwidth(),         
+            height=self.winfo_reqheight(),           
             bg=MAIN_BG,
-            highlightthickness=0
+            highlightthickness=0                          
         )
         
-        # Bind hover events
-        self.bind("<Enter>", self.on_enter)
-        self.bind("<Leave>", self.on_leave)
+        # Bind hover events                                
+        self.bind("<Enter>", self.on_enter)                        
+        self.bind("<Leave>", self.on_leave)                         
         
     def on_enter(self, e):
         """Mouse enter effect"""
@@ -84,63 +84,63 @@ class ModernButton(tk.Button):
             self.update_idletasks()
             self.after(20)
         
-    def on_leave(self, e):
-        """Mouse leave effect"""
-        self.configure(background=self.default_bg)
-        # Smooth transition effect
-        for i in range(5):
-            self.update_idletasks()
-            self.after(20)
+    def on_leave(self, e):                            
+        """Mouse leave effect"""                              
+        self.configure(background=self.default_bg)                      
+        # Smooth transition effect                        
+        for i in range(5):                    
+            self.update_idletasks()                        
+            self.after(20)                      
 
-class ActionText(tk.Label):
-    """Clickable text with hover effect"""
+class ActionText(tk.Label):          
+    """Clickable text with hover effect"""            
     def __init__(self, master, text, command, **kwargs):
-        super().__init__(
-            master,
-            text=text,
-            font=("Helvetica", 12),
-            bg=MAIN_BG,
-            fg=TEXT_COLOR,
-            cursor="hand2",
-            **kwargs
-        )
-        self.command = command
-        self.bind("<Enter>", self.on_enter)
-        self.bind("<Leave>", self.on_leave)
-        self.bind("<Button-1>", self.on_click)
+        super().__init__(         
+            master,              
+            text=text,                    
+            font=("Helvetica", 12),                    
+            bg=MAIN_BG,                     
+            fg=TEXT_COLOR,                    
+            cursor="hand2",              
+            **kwargs                      
+        )                          
+        self.command = command                
+        self.bind("<Enter>", self.on_enter)                 
+        self.bind("<Leave>", self.on_leave)           
+        self.bind("<Button-1>", self.on_click)                     
         
-    def on_enter(self, e):
-        self.configure(fg=SECONDARY_COLOR)
+    def on_enter(self, e):                        
+        self.configure(fg=SECONDARY_COLOR)               
         
-    def on_leave(self, e):
-        self.configure(fg=TEXT_COLOR)
+    def on_leave(self, e):                         
+        self.configure(fg=TEXT_COLOR)                 
         
-    def on_click(self, e):
-        self.command()
+    def on_click(self, e):                
+        self.command()                         
 
-class FakeMoneyDetective:
-    def __init__(self, root):
-        self.root = root
-        self.root.title("Fake Money Detective")
-        self.root.geometry("1200x900")
-        self.root.configure(bg=MAIN_BG)
+class FakeMoneyDetective:                        
+    def __init__(self, root):                
+        self.root = root                    
+        self.root.title("Fake Money Detective")              
+        self.root.geometry("1200x900")           
+        self.root.configure(bg=MAIN_BG)        
         
-        # Initialize the detector
-        self.detector = CurrencyDetector(MODEL_PATH)
-        if self.detector.model is None:
-            messagebox.showerror("Error", "Could not load model")
+        # Initialize the detector                                
+        self.detector = CurrencyDetector(MODEL_PATH)                  
+        if self.detector.model is None:                       
+            messagebox.showerror("Error", "Could not load model")                        
             
-        self.current_image_path = None
-        self.setup_ui()
+        self.current_image_path = None                          
+        self.setup_ui()                                      
         
-    def setup_ui(self):
-        # Main container
-        self.main_container = ModernFrame(self.root, bg=MAIN_BG)
-        self.main_container.pack(fill=tk.BOTH, expand=True, padx=30, pady=30)
+    def setup_ui(self):               
+        # Main container                    
+        self.main_container = ModernFrame(self.root, bg=MAIN_BG)                 
+        self.main_container.pack(fill=tk.BOTH, expand=True, padx=30, pady=30)           
         
-        # Header section with logo and title
-        header = ModernFrame(self.main_container, bg=MAIN_BG)
-        header.pack(fill=tk.X, pady=(0, 30))
+        # Header section with logo and title                   
+        header = ModernFrame(self.main_container, bg=MAIN_BG)                           
+        header.pack(fill=tk.X, pady=(0, 30))                                            
         
         try:
             logo_img = Image.open(LOGO_PATH)
@@ -229,10 +229,10 @@ class FakeMoneyDetective:
         self.processed_frame.pack(padx=20, pady=10)
         self.processed_frame.pack_propagate(False)
         
-        self.processed_label = tk.Label(
-            self.processed_frame,
-            bg=FRAME_BG
-        )
+        self.processed_label = tk.Label(           
+            self.processed_frame,              
+            bg=FRAME_BG                     
+        )                                                  
         self.processed_label.place(relx=0.5, rely=0.5, anchor="center")
         
         # Results section
