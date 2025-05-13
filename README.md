@@ -7,7 +7,7 @@ This repository contains the code for a fake banknote detection system. It utili
 * **Machine Learning**
 * **Computer Vision**
 * 
-## Overview
+## Overview 👀
 
 The project consists of the following main components:
 
@@ -18,11 +18,11 @@ The project consists of the following main components:
 * **`gui/detective.png`**: (Optional) A logo image used in the GUI.
 * **`data_banknote_authentication.txt`**: (Assumed) The dataset used for training the model.
 
-## Getting Started
+## Getting Started 🚀
 
 To run this project, you will need to have Python 3 installed on your system, along with the necessary libraries.
 
-### Prerequisites
+### Prerequisitesb ✅️
 
 * **Python 3**
 * **Libraries (install using pip):**
@@ -30,7 +30,7 @@ To run this project, you will need to have Python 3 installed on your system, al
     pip install pandas scikit-learn numpy opencv-python scikit-image joblib matplotlib pillow
     ```
 
-### Developers
+### Developers 🤓
 
 * Abdulrahman Mohamed
 * Abdulrahman Nasser
@@ -39,4 +39,4 @@ To run this project, you will need to have Python 3 installed on your system, al
 
 ## License
 
-this project can be used for anyone
+this project can be used for anyone 😀
