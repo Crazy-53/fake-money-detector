@@ -6,7 +6,7 @@ This repository contains the code for a fake banknote detection system. It utili
 * **Fake Banknote Detection**
 * **Machine Learning**
 * **Computer Vision**
-* 
+ 
 ## Overview 👀
 
 The project consists of the following main components:
