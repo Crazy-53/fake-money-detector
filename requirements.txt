@@ -1,0 +1,13 @@
+ipykernel
+python-dotenv
+pywavelets
+scikit-image
+matplotlib
+scikit-learn
+pandas
+scipy
+numpy
+opencv-python
+joblib
+opencv-python-headless
+pillow
